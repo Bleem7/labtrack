@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- SweetAlert CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+  <title>Register | Lab-Track</title>
+  <link rel="stylesheet" href="../css/registerpage.css">
+</head>
+<body>
+  <div class="container">
+    <div class="register-container">
+      <h2>Create an Account</h2>
+      <form id="register" name="register" action="../Login/registerphp.php" method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your desired username" required>
+          <span id="username-error" class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          <span id="email-error" class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <span id="password-error" class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+          <span id="confirm-password-error" class="error-message"></span>
+        </div>
+        
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="loginpage.html">Login here</a></p>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('register').addEventListener('submit', function(event) {
+      // Validation flag to check if all conditions are met
+      let isValid = true;
+
+      // Username validation
+      const username = document.getElementById('username').value;
+      const usernameError = document.getElementById('username-error');
+      if (!isAlphabetic(username)) {
+        isValid = false;
+        usernameError.textContent = 'Username must contain only alphabetic characters';
+      } else {
+        usernameError.textContent = '';
+      }
+
+      // Email validation
+      const email = document.getElementById('email').value;
+      const emailError = document.getElementById('email-error');
+      if (!isValidEmail(email)) {
+        isValid = false;
+        emailError.textContent = 'Please enter a valid email address';
+      } else {
+        emailError.textContent = '';
+      }
+
+      // Password validation
+      const password = document.getElementById('password').value;
+      const passwordError = document.getElementById('password-error');
+      if (password.length < 8) {
+        isValid = false;
+        passwordError.textContent = 'Password must be at least 8 characters long';
+      } else {
+        passwordError.textContent = '';
+      }
+
+      // Confirm password validation
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const confirmPasswordError = document.getElementById('confirm-password-error');
+      if (password !== confirmPassword) {
+        isValid = false;
+        confirmPasswordError.textContent = 'Passwords do not match';
+      } else {
+        confirmPasswordError.textContent = '';
+      }
+
+      // Prevent form submission if validation fails
+      if (!isValid) {
+        event.preventDefault();
+      } else {
+        // Call function to display SweetAlert for successful registration
+        showSuccessAlert();
+      }
+
+    });
+
+    // Function to validate email format
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // Function to validate if the string contains only alphabetic characters
+    function isAlphabetic(str) {
+      return /^[A-Za-z]+$/.test(str);
+    }
+
+    // Function to display SweetAlert for successful registration
+    function showSuccessAlert() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: 'You have successfully registered!',
+      });
+    }
+  </script>
+
+   <!-- SweetAlert JavaScript -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+</body>
+</html>

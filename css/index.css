@@ -1,0 +1,161 @@
+body {
+  background: linear-gradient(to right, #00b8d9, #00c4a7);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  margin-right: 1rem;
+}
+
+header nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+main .hero {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+main .hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+main .hero p {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+main .hero .button {
+  background-color: #00b8d9;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+main .hero .button:hover {
+  background-color: #00a0c6;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Add margin between feature boxes */
+  margin-right: 10px; /* Add margin to the right */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 300px;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  flex: 0 0 auto;
+  padding: 20px;
+}
+
+.feature-icon i {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.feature-title {
+  flex: 1 1 auto;
+  padding: 20px;
+}
+
+.feature-title h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.feature-title p {
+  font-size: 14px;
+  color: #666;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}

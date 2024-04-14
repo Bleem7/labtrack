@@ -1,0 +1,280 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.assignments,
+.notifications {
+  width: 45%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00bcd4;
+}
+
+.assignment-list,
+.notification-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.assignment-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-card h3 {
+  margin-top: 0;
+  color: #00bcd4;
+}
+
+.assignment-card p {
+  margin-bottom: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: #0097a7;
+}
+
+.add-assignment-btn {
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.add-assignment-btn:hover {
+  background-color: #00796b;
+}
+
+.notification-item {
+  background-color: #ffe0b2;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.notification-item p {
+  margin: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #f00;
+}
+
+footer {
+  background-color: #00bcd4;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Fancy Animations */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s, opacity 0.3s;
+}
+
+.popup-overlay.visible {
+visibility: visible;
+opacity: 1;
+display: block !important;
+}
+
+.popup-box {
+background-color: #fff;
+border-radius: 10px;
+padding: 20px;
+width: 400px;
+position: relative;
+}
+
+.popup-box label {
+display: block;
+margin-bottom: 5px;
+}
+
+.popup-box input[type="text"],
+.popup-box input[type="date"] {
+width: 100%;
+padding: 5px;
+margin-bottom: 10px;
+}
+
+.popup-box button {
+background-color: #00bcd4;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.popup-box button:hover {
+background-color: #0097a7;
+}
+
+.popup-box .close-btn {
+position: absolute;
+
+right: 10px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.popup-box .close-btn:hover {
+color: #f00;
+}
+
+
+/* Edit popup form */
+#edit-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-popup-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#edit-popup-box label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#edit-popup-box input[type="text"],
+#edit-popup-box input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#edit-popup-box button[type="submit"],
+#edit-popup-box button.close-btn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#edit-popup-box button[type="submit"]:hover,
+#edit-popup-box button.close-btn:hover {
+  background-color: #0056b3;
+}
